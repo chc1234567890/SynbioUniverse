@@ -1,8 +1,8 @@
 function toHome() {
-  window.location.href = "/";
+  window.location.href = "/SynbioUniverse/";
 }
 function toEdit() {
-  window.location.href = "/edit";
+  window.location.href = "/SynbioUniverse/edit";
 }
 const prefix = "/SynbioUniverse/static/";
 
