@@ -1,0 +1,55 @@
+body {
+  margin: 0;
+  background-color: #f4f6c8;
+}
+
+.bg-img {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  background-image: url("edit_bg.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto 100vmin;
+}
+
+.navigator {
+  position: absolute;
+  top: 0;
+  height: 12vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3vh;
+  background-color: #f4f6c8;
+}
+
+.navigator .nav-title {
+  font-weight: 700;
+  margin: 0;
+  width: 40vmin;
+  align-content: center;
+  text-align: center;
+}
+
+.navigator > * {
+  margin-right: 4vw;
+}
+.navigator > span {
+  display: flex;
+  align-items: center;
+}
+
+.navigator > button {
+  background-color: #ceebb3;
+  cursor: pointer;
+  border: none;
+  width: 6em;
+  height: 2.5em;
+  font-size: 3vh;
+}

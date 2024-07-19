@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='2048.css') }}"
+    />
+    <script
+      type="text/javascript"
+      src="{{ url_for('static', filename='2048.js') }}"
+    ></script>
+    <!-- <link rel="icon" href="" /> -->
+    <title>🧬基因星球丨🪐智慧星球🦠</title>
+  </head>
+
+  <body onload="init()">
+    <div class="bg-img"></div>
+    <div class="navigator">
+      <p class="nav-title">蛋白质合成实验室</p>
+      <button onclick='toHome()'>返回主页</button>
+      <button onclick='toEdit()'>上一关</button>
+      <span>
+        <p>时间：</p>
+        <p id="nav-time">00 : 00</p>
+      </span>
+      <span>
+        <p>得分：</p>
+        <p id="nav-score">0</p>
+      </span>
+      <span>
+        <p>蛋白质：</p>
+        <span id="protein-container">
+          <img id="protein-1"></img>
+          <img id="protein-2"></img>
+          <img id="protein-3"></img>
+          <img id="protein-4"></img>
+          <img id="protein-5"></img>
+        </span>
+      </span>
+      <button onclick="init()">重新开始</button>
+    </div>
+    <div id="dashboard">
+      <div id="rPr"><div></div></div>
+      <div id="r0"><div></div></div>
+      <div id="r1"><div></div></div>
+      <div id="r2"><div></div></div>
+      <div id="r3"><div></div></div>
+      <div id="r4"><div></div></div>
+      <div id="r5"><div></div></div>
+      <div id="r6"><div></div></div>
+      <div id="r7"><div></div></div>
+      <div id="r8"><div></div></div>
+      <div id="r9"><div></div></div>
+      <div id="r10"><div></div></div>
+      <div id="r11"><div></div></div>
+      <div id="r12"><div></div></div>
+      <div id="r13"><div></div></div>
+      <div id="r14"><div></div></div>
+      <div id="r15"><div></div></div>
+      <div id="r16"><div></div></div>
+      <div id="r17"><div></div></div>
+      <div id="r18"><div></div></div>
+      <div id="r19"><div></div></div>
+      <div id="r20"><div></div></div>
+      <div id="r21"><div></div></div>
+      <div id="r22"><div></div></div>
+      <div id="r23"><div></div></div>
+      <div id="r24"><div></div></div>
+      <div id="r25"><div></div></div>
+      <div id="r26"><div></div></div>
+      <div id="r27"><div></div></div>
+      <div id="r28"><div></div></div>
+      <div id="r29"><div></div></div>
+      <div id="r30"><div></div></div>
+      <div id="r31"><div></div></div>
+      <div id="r32"><div></div></div>
+      <div id="r33"><div></div></div>
+      <div id="r34"><div></div></div>
+      <div id="r35"><div></div></div>
+      <div id="r36"><div></div></div>
+    </div>
+    <div id="modal-cover"></div>
+    <div id="modal">
+      <div class="title">
+      </div>
+      <div class="content">
+        <p></p>
+        <img id="modal-img"></img>
+      </div>
+      <!-- <div class="confirm" onclick="fnClose()">
+        <span class="close-but">我知道了</span>
+      </div> -->
+      <div class="confirm">
+        <span class="close-but" onclick="fnClose(0)"></span>
+        <span class="close-but" onclick="fnClose(1)"></span>
+      </div>
+    </div>
+  </body>
+</html>

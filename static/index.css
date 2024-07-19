@@ -1,0 +1,63 @@
+#background-canvas {
+  height: 100vh;
+  width: 100vw;
+  background-color: black;
+}
+
+.home {
+  position: absolute;
+  top: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  color: white;
+  font-family: Microsoft Yahei, SimSun;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.game-title {
+  font-size: 10vh;
+  font-weight: 700;
+}
+
+.game-intro {
+  margin: 0 25vh;
+  font-size: 3vh;
+}
+
+.buttons {
+  position: relative;
+  margin-top: 10vh;
+  line-height: 10rem;
+  width: 16rem;
+  padding: 0;
+  border: none;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.5rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-block;
+  outline: none;
+  margin-right: 4rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 80%;
+}
+.buttons:hover {
+  background-size: 100%;
+}
+
+/* Courtesy of:
+  https://ts1.cn.mm.bing.net/th/id/R-C.b73a60a8158df530980e8e003a7597c8?rik=BVZ0elctk6OqCw&riu=http%3a%2f%2fwww.kuaipng.com%2fUploads%2fpic%2fw%2f2020%2f06-30%2f87466%2fwater_87466_698_698.31_.png&ehk=gspFdl4iABVT4OpxvNy0hhYq1aLTBXWU9Wkj5dyuv4Y%3d&risl=&pid=ImgRaw&r=0
+*/
+.button-2048 {
+  background-image: url("/static/star1.png");
+}
+.button-sewage {
+  background-image: url("/static/star2.png");
+}

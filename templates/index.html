@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='index.css') }}"
+    />
+    <script
+      type="text/javascript"
+      src="{{ url_for('static', filename='index.js') }}"
+    ></script>
+    <script
+      type="text/javascript"
+      src="{{ url_for('static', filename='star-background.js') }}"
+    ></script>
+    <!-- <link rel="icon" href="" /> -->
+    <title>首页丨🪐智慧星球🦠</title>
+  </head>
+  <body style="margin: 0" onload="startBackgroundAnimation()">
+    <canvas id="background-canvas"></canvas>
+    <div class="home">
+      <h1 class="game-title">智慧星球</h1>
+      <div class="game-intro">
+        欢迎来到智慧星球！ 探索科学的奇妙世界，成为知识小达人！
+        在智慧星球，你将踏上一次充满乐趣的科学冒险之旅。每个星球都是一个独立的模块，带你了解生物学的神奇知识。
+        选择一个星球开始你的冒险吧！
+      </div>
+      <span>
+        <div class="buttons button-2048" onclick="to2048()">基因星球</div>
+        <!-- <div class="buttons button-sewage" onclick="toSewage()">净化星球</div> -->
+      </span>
+    </div>
+    <img id="ecoli"></img>
+  </body>
+</html>
