@@ -1,10 +1,10 @@
 function toHome() {
-  window.location.href = "/SynbioUniverse/";
+  window.location.href = "./index.html";
 }
 function toEdit() {
-  window.location.href = "/SynbioUniverse/edit";
+  window.location.href = "./edit.html";
 }
-const prefix = "/SynbioUniverse/static/";
+const prefix = "./static/";
 
 var Func = [];
 function fnClose(res) {
@@ -74,6 +74,17 @@ const knowledge = {
   128: "由mRNA的指令合成的分子，这是一个由另一种“积木”——氨基酸组成的长链。多肽链是蛋白质的前身，通过折叠和修饰，最终形成功能完整的蛋白质。",
   256: "最终的“产品”，执行细胞中的各种功能，比如充当支架、抵御病毒入侵、和其他细胞交流等。",
 };
+const score = {
+  0: 0,
+  2: 1,
+  4: 2,
+  8: 4,
+  16: 10,
+  32: 20,
+  64: 40,
+  128: 60,
+  256: 100,
+};
 
 var rect, protein;
 function rand(l, r) {
@@ -87,7 +98,7 @@ function Move0(tb) {
       for (k = j + 1; k < tb[i].length && tb[i][k] == 0; k++);
       if (k < tb[i].length && tb[i][j] == tb[i][k]) {
         tb[i][j] <<= 1;
-        ret_score += tb[i][j];
+        ret_score += score[tb[i][j]];
         tb[i][k] = 0;
       }
       j = k - 1;
@@ -161,6 +172,10 @@ function setRect(i, val) {
   if (val != 0) {
     div.style.backgroundImage = "url(" + prefix + "r" + val + ".png)";
   } else div.style.backgroundImage = "";
+  if (!hasShown[val]) {
+    showCard(rect[i], "新方块！");
+    hasShown[val] = true;
+  }
 }
 function copy(t) {
   var t1 = new Array(RNUM);
@@ -170,13 +185,20 @@ function copy(t) {
   }
   return t1;
 }
-function showCard(rec) {
+function showCard(rec, title = "图鉴") {
   var num = Number(rec.getAttribute("id").slice(1));
   num = table[Math.floor(num / RNUM)][num % RNUM];
+  if (num == 0) return;
   Func = [() => {}, () => {}];
   MessageBox(
-    mp[num],
-    "　　" + knowledge[num],
+    title,
+    "<strong>" +
+      mp[num] +
+      "</strong><br>" +
+      knowledge[num] +
+      "<br><strong>被合并时得分</strong>：" +
+      score[num] +
+      "分<br>",
     "继续游戏",
     undefined,
     "r" + num
@@ -185,21 +207,53 @@ function showCard(rec) {
 function addScore(add_score) {
   var nav_score = document.getElementById("nav-score");
   nav_score.innerHTML = String(Number(nav_score.innerHTML) + add_score);
+  if (add_score > 0)
+    setTimeout(() => {
+      nav_score.style.color = "red";
+      setTimeout(() => {
+        nav_score.style.color = "black";
+        setTimeout(() => {
+          nav_score.style.color = "red";
+          setTimeout(() => {
+            nav_score.style.color = "black";
+          }, 125);
+        }, 125);
+      }, 125);
+    }, 125);
 }
 
 function Pr(num) {
   console.log("Protein! " + String(num));
   protein[++cntProtein].setAttribute("src", prefix + "protein.png");
-  table[Math.floor(num / RNUM)][num % RNUM] = 0;
-  var rPr = document.getElementById("rPr");
-  rPr.style.display = "flex";
-  rPr.style.top = String(2 + Math.floor(num / RNUM) * 12.5) + "vmin";
-  rPr.style.left = String(2 + (num % RNUM) * 12.5) + "vmin";
-  rPr.style.height = rPr.style.width = "10.5vmin";
-  rPr.className = "rPr r256 r";
   setTimeout(() => {
-    rPr.className = "r256 r";
-    rPr.style.display = "none";
+    protein[cntProtein].style.transform = "scale(1.4)";
+    setTimeout(() => {
+      protein[cntProtein].style.transform = "scale(1)";
+      setTimeout(() => {
+        protein[cntProtein].style.transform = "scale(1.4)";
+        setTimeout(() => {
+          protein[cntProtein].style.transform = "scale(1)";
+          setTimeout(() => {
+            protein[cntProtein].style.transform = "scale(1.4)";
+            setTimeout(() => {
+              protein[cntProtein].style.transform = "scale(1)";
+              setTimeout(() => {
+                protein[cntProtein].style.transform = "scale(1.4)";
+                setTimeout(() => {
+                  protein[cntProtein].style.transform = "scale(1)";
+                }, 250);
+              }, 125);
+            }, 250);
+          }, 125);
+        }, 250);
+      }, 125);
+    }, 250);
+  }, 125);
+  table[Math.floor(num / RNUM)][num % RNUM] = 0;
+  rect[num].className += " rPr";
+  setTimeout(() => {
+    rect[num].className = rect[num].className.slice(0, -4);
+    setRect(num, 0);
     if (cntProtein == 5) {
       Func = [toHome, init];
       MessageBox(
@@ -210,16 +264,24 @@ function Pr(num) {
           document.getElementById("nav-score").innerHTML +
           "分！",
         "返回主页",
-        "再来一轮"
+        "再来一轮",
+        "ecoli_^^D"
       );
       return;
     }
   }, 1500);
 }
 
+var hasShown;
 var timer;
 var cntProtein;
 var table, table1;
+(() => {
+  hasShown = {};
+  for (var i in mp) {
+    hasShown[i] = false;
+  }
+})();
 function init() {
   rect = new Array(RNUM * CNUM);
   ps = new Array(RNUM * CNUM);
@@ -231,13 +293,6 @@ function init() {
     while (vec.indexOf(tmp) != -1) tmp = rand(0, RNUM * CNUM);
     vec.push(tmp);
   }
-
-  var rPr = document.getElementById("rPr");
-  rPr.style.display = "none";
-  rPr.style.position = "absolute";
-  rPr.style.zIndex = 10;
-  rPr.className = "r256 r";
-  rPr.backgroundImage = "url(" + prefix + "r256.png)";
 
   for (var i = 0; i < RNUM * CNUM; i++) {
     rect[i] = document.getElementById("r" + i);
@@ -280,11 +335,6 @@ function init() {
       }
     }
     table = copy(table1);
-    for (var i = 0; i < RNUM; i++)
-      for (var j = 0; j < CNUM; j++)
-        if (table[i][j] == 256) {
-          Pr(i * RNUM + j);
-        }
     var v = new Array();
     for (var i = 0; i < RNUM; i++)
       for (var j = 0; j < CNUM; j++) if (table[i][j] == 0) v.push(i * RNUM + j);
@@ -295,6 +345,11 @@ function init() {
         setRect(i, table[Math.floor(i / RNUM)][i % RNUM]);
       }
     }
+    for (var i = 0; i < RNUM; i++)
+      for (var j = 0; j < CNUM; j++)
+        if (table[i][j] == 256) {
+          Pr(i * RNUM + j);
+        }
   };
   /* reset the counter */
   document.getElementById("nav-time").innerHTML = "00 : 00";
@@ -310,10 +365,14 @@ function init() {
     protein[i] = document.getElementById("protein-" + i);
     protein[i].setAttribute("src", prefix + "protein-empty.png");
   }
-  Func = [() => {}, () => {}];
 
   if (timer) clearInterval(timer);
 
+  Func = [
+    () => {
+      showCard(rect[vec[0]], "一切的开始");
+    },
+  ];
   MessageBox(
     "蛋白质合成实验室",
     "欢迎来到蛋白质合成实验室！<br>\

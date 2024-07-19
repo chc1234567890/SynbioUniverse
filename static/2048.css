@@ -9,7 +9,7 @@ body {
   width: 100vw;
   height: 100vh;
   z-index: -1;
-  background-image: url("/SynbioUniverse/static/2048_bg.png");
+  background-image: url("./2048_bg.png");
   background-position: bottom left;
   background-repeat: no-repeat;
   background-size: 50vmin;
@@ -75,7 +75,7 @@ body {
 
 #dashboard {
   position: absolute;
-  top: 20vh;
+  top: 15vh;
   left: 25vw;
   background-color: #1ea83e;
   margin: 1vmin;
@@ -103,38 +103,38 @@ body {
 }
 
 #dashboard .r0 {
-  background: #ceebb3;
+  background-color: #ceebb3;
 }
 
 #dashboard .r2 {
-  background: #a4db70;
+  background-color: #a4db70;
   box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0),
     inset 0 0 0 1px rgba(255, 255, 255, 0);
 }
 
 #dashboard .r4 {
-  background: rgb(129, 207, 18);
+  background-color: rgb(129, 207, 18);
   box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0),
     inset 0 0 0 1px rgba(255, 255, 255, 0);
 }
 
 #dashboard .r8 {
-  background: rgb(62, 220, 0);
+  background-color: rgb(62, 220, 0);
   box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0),
     inset 0 0 0 1px rgba(255, 255, 255, 0);
 }
 
 #dashboard .r16 {
-  background: rgb(250, 255, 146);
+  background-color: rgb(250, 255, 146);
 }
 
 #dashboard .r32 {
-  background: rgb(252, 215, 101);
+  background-color: rgb(252, 215, 101);
 }
 
 #dashboard .r64 {
   color: #f9f6f2;
-  background: rgb(247, 187, 57);
+  background-color: rgb(247, 187, 57);
   box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.2381),
     inset 0 0 0 1px rgba(255, 255, 255, 0.14286);
   font-size: 12px;
@@ -142,7 +142,7 @@ body {
 
 #dashboard .r128 {
   color: #f9f6f2;
-  background: rgb(255, 156, 63);
+  background-color: rgb(255, 156, 63);
   box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.47619),
     inset 0 0 0 1px rgba(255, 255, 255, 0.28571);
   font-size: 17px;
@@ -150,7 +150,7 @@ body {
 
 #dashboard .r256 {
   color: #f9f6f2;
-  background: rgb(252, 49, 31);
+  background-color: rgb(252, 49, 31);
   box-shadow: 0 0 30px 20px rgba(243, 215, 116, 0.55556),
     inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
   font-size: 20px;
@@ -210,7 +210,7 @@ body {
   position: absolute;
   top: 50vh;
   left: 50vw;
-  background: #ffffff;
+  background-color: #ffffff;
   border-radius: 5px;
   z-index: 12;
   transform: translate(-50%, -50%);
