@@ -237,7 +237,7 @@ function init() {
   rPr.style.position = "absolute";
   rPr.style.zIndex = 10;
   rPr.className = "r256 r";
-  rPr.innerHTML = "蛋白质";
+  rPr.backgroundImage = "url(" + prefix + "r256.png)";
 
   for (var i = 0; i < RNUM * CNUM; i++) {
     rect[i] = document.getElementById("r" + i);
