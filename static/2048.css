@@ -9,7 +9,7 @@ body {
   width: 100vw;
   height: 100vh;
   z-index: -1;
-  background-image: url("2048_bg.png");
+  background-image: url("/SynbioUniverse/static/2048_bg.png");
   background-position: bottom left;
   background-repeat: no-repeat;
   background-size: 50vmin;

@@ -4,6 +4,7 @@ function toHome() {
 function toEdit() {
   window.location.href = "/edit";
 }
+const prefix = "/SynbioUniverse/static/";
 
 var Func = [];
 function fnClose(res) {
@@ -39,7 +40,7 @@ function MessageBox(
   } else {
     btn2.setAttribute("class", "hidden");
   }
-  modalImg.setAttribute("src", "/static/" + img + ".png");
+  modalImg.setAttribute("src", prefix + img + ".png");
   modal.style.width = box_width;
 }
 
@@ -158,7 +159,7 @@ function setRect(i, val) {
   // div.innerHTML = val == 0 ? "" : mp[val];
   rect[i].setAttribute("class", "r" + val + " r");
   if (val != 0) {
-    div.style.backgroundImage = "url(/static/r" + val + ".png)";
+    div.style.backgroundImage = "url(" + prefix + "r" + val + ".png)";
   } else div.style.backgroundImage = "";
 }
 function copy(t) {
@@ -188,7 +189,7 @@ function addScore(add_score) {
 
 function Pr(num) {
   console.log("Protein! " + String(num));
-  protein[++cntProtein].setAttribute("src", "/static/protein.png");
+  protein[++cntProtein].setAttribute("src", prefix + "protein.png");
   table[Math.floor(num / RNUM)][num % RNUM] = 0;
   var rPr = document.getElementById("rPr");
   rPr.style.display = "flex";
@@ -307,7 +308,7 @@ function init() {
   cntProtein = 0;
   for (var i = 1; i <= nProtein; i++) {
     protein[i] = document.getElementById("protein-" + i);
-    protein[i].setAttribute("src", "/static/protein-empty.png");
+    protein[i].setAttribute("src", prefix + "protein-empty.png");
   }
   Func = [() => {}, () => {}];
 
