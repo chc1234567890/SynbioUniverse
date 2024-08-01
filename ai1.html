@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="stylesheet"
+      href="./static/ai1.css"
+    />
+    <script
+      type="text/javascript"
+      src="./static/ai1.js"
+    ></script>
+    <!-- <link rel="icon" href="" /> -->
+    <title>🤖智能星球丨🪐智慧星球🦠</title>
+  </head>
+
+  <body onload="init()">
+    <div class="bg-img"></div>
+    <div class="navigator">
+      <p class="nav-title">蛋白质合成实验室</p>
+      <button onclick='toHome()'>返回主页</button>
+      <button onclick='toEdit()'>上一关</button>
+      <span>
+        <p>时间：</p>
+        <p id="nav-time">00 : 00</p>
+      </span>
+      <span>
+        <p>得分：</p>
+        <p id="nav-score">0</p>
+      </span>
+      <span>
+        <p>蛋白质：</p>
+        <span id="protein-container">
+          <img id="protein-1"></img>
+          <img id="protein-2"></img>
+          <img id="protein-3"></img>
+          <img id="protein-4"></img>
+          <img id="protein-5"></img>
+        </span>
+      </span>
+      <button onclick="init()">重新开始</button>
+    </div>
+    <div id="dashboard">
+    </div>
+    <div id="modal-cover"></div>
+    <div id="modal">
+      <div class="title">
+      </div>
+      <div class="content">
+        <p></p>
+        <img id="modal-img"></img>
+      </div>
+      <!-- <div class="confirm" onclick="fnClose()">
+        <span class="close-but">我知道了</span>
+      </div> -->
+      <div class="confirm">
+        <span class="close-but" onclick="fnClose(0)"></span>
+        <span class="close-but" onclick="fnClose(1)"></span>
+      </div>
+    </div>
+  </body>
+</html>
