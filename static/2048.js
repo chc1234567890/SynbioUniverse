@@ -44,11 +44,13 @@ function MessageBox(
   modal.style.width = box_width;
 }
 
-const LEFT = 37;
-const UP = 38;
-const RIGHT = 39;
-const DOWN = 40;
+const ENTER = "Enter";
+const LEFT = "ArrowLeft";
+const UP = "ArrowUp";
+const RIGHT = "ArrowRight";
+const DOWN = "ArrowDown";
 const KEYS = [LEFT, RIGHT, UP, DOWN];
+
 const RNUM = 4;
 const CNUM = 4;
 const nProtein = 5;
@@ -302,8 +304,13 @@ function init() {
     table[Math.floor(i / RNUM)].push(val);
   }
   window.onkeydown = function (evt) {
-    if (!document.getElementById("modal").hasAttribute("class")) return;
-    var key = evt.keyCode;
+    var key = evt.key;
+    if (!document.getElementById("modal").hasAttribute("class")) {
+      if (key == ENTER) {
+        fnClose(0);
+      }
+      return;
+    }
     if (key != UP && key != DOWN && key != LEFT && key != RIGHT) return;
     table1 = copy(table);
     add_score = Move(table1, key);
@@ -374,10 +381,11 @@ function init() {
     },
   ];
   MessageBox(
-    "蛋白质合成实验室",
-    "欢迎来到蛋白质合成实验室！<br>\
-在这里，你将逐步地了解基因表达的过程——转录和翻译。通过合并相同的方块，你将从DNA的基本单位——脱氧核苷酸开始，\
-经过DNA、RNA，最终合成基因表达的产物——蛋白质。\
+    "基因星球",
+    "欢迎来到基因星球！<br>\
+在这里，小细菌会带你初步了解一些基因的基本知识。\
+通过合并相同的方块，你将从DNA的基本单位——脱氧核苷酸开始，\
+经过DNA、RNA，最终合成基因表达的产物——蛋白质。<br><br>\
 要通过这一关，你需要<strong>合成 5 个蛋白质</strong>哦！<br>\
 单击方块可以查看方块类型的介绍。\
 <br>按键盘上的“↑”“↓”“←”“→”方向键，可以朝不同方向合并方块。\

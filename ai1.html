@@ -2,14 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link
-      rel="stylesheet"
-      href="./static/ai1.css"
-    />
-    <script
-      type="text/javascript"
-      src="./static/ai1.js"
-    ></script>
+    <link rel="stylesheet" href="./static/ai1.css" />
+    <script type="text/javascript" src="./static/ai1.js"></script>
     <!-- <link rel="icon" href="" /> -->
     <title>🤖智能星球丨🪐智慧星球🦠</title>
   </head>
@@ -17,38 +11,71 @@
   <body onload="init()">
     <div class="bg-img"></div>
     <div class="navigator">
-      <p class="nav-title">蛋白质合成实验室</p>
-      <button onclick='toHome()'>返回主页</button>
-      <button onclick='toEdit()'>上一关</button>
+      <p class="nav-title">智能星球</p>
+      <button onclick="toHome()">返回主页</button>
+      <button onclick="location.reload()">重新开始</button>
       <span>
         <p>时间：</p>
         <p id="nav-time">00 : 00</p>
       </span>
       <span>
-        <p>得分：</p>
+        <p>剩余蛋白质：</p>
         <p id="nav-score">0</p>
       </span>
-      <span>
-        <p>蛋白质：</p>
-        <span id="protein-container">
-          <img id="protein-1"></img>
-          <img id="protein-2"></img>
-          <img id="protein-3"></img>
-          <img id="protein-4"></img>
-          <img id="protein-5"></img>
-        </span>
-      </span>
-      <button onclick="init()">重新开始</button>
     </div>
     <div id="dashboard">
+      <img class="pr" />
+      <img class="pr" />
+      <img class="pr" />
+      <img class="pr" />
+      <img class="pr" />
+      <img class="pr" />
+      <img class="pr" />
+      <img class="pr" />
+      <img class="pr" />
+      <img class="pr" />
     </div>
+    <span id="clusters">
+      <img src="./static/ecoli_..).png" height="100%" />
+      <div class="cluster-1">
+        <div class="cluster-image"></div>
+        <div class="cluster-pr-container">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+      <div class="cluster-2">
+        <div class="cluster-image"></div>
+        <div class="cluster-pr-container">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+      <div class="cluster-3">
+        <div class="cluster-image"></div>
+        <div class="cluster-pr-container">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+      <div class="cluster-4">
+        <div class="cluster-image"></div>
+        <div class="cluster-pr-container">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+    </span>
     <div id="modal-cover"></div>
     <div id="modal">
-      <div class="title">
-      </div>
+      <div class="title"></div>
       <div class="content">
         <p></p>
-        <img id="modal-img"></img>
+        <img id="modal-img" />
       </div>
       <!-- <div class="confirm" onclick="fnClose()">
         <span class="close-but">我知道了</span>

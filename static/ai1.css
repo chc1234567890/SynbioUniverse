@@ -9,10 +9,9 @@ body {
   width: 100vw;
   height: 100vh;
   z-index: -1;
-  background-image: url("./ai/bg.png");
-  background-position: bottom left;
+  background-image: url("./ai/bg.jpg");
   background-repeat: no-repeat;
-  background-size: 50vmin;
+  background-size: 100% 105%;
 }
 
 .navigator {
@@ -75,104 +74,12 @@ body {
 
 #dashboard {
   position: absolute;
-  top: 15vh;
-  left: 25vw;
-  background-color: #1ea83e;
-  margin: 1vmin;
-  border-radius: 2.5vmin;
-  padding: 1vmin;
-  height: 50vmin;
-  width: 50vmin;
-}
-
-#dashboard .r {
-  margin: 1vmin;
-  border-radius: 1.25vmin;
-  height: 10.5vmin;
-  width: 10.5vmin;
-  float: left;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 10px;
-  font-weight: bold;
-}
-
-#dashboard > div {
-  display: none;
-}
-
-#dashboard .r0 {
-  background-color: #ceebb3;
-}
-
-#dashboard .r2 {
-  background-color: #a4db70;
-  box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0),
-    inset 0 0 0 1px rgba(255, 255, 255, 0);
-}
-
-#dashboard .r4 {
-  background-color: rgb(129, 207, 18);
-  box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0),
-    inset 0 0 0 1px rgba(255, 255, 255, 0);
-}
-
-#dashboard .r8 {
-  background-color: rgb(62, 220, 0);
-  box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0),
-    inset 0 0 0 1px rgba(255, 255, 255, 0);
-}
-
-#dashboard .r16 {
-  background-color: rgb(250, 255, 146);
-}
-
-#dashboard .r32 {
-  background-color: rgb(252, 215, 101);
-}
-
-#dashboard .r64 {
-  color: #f9f6f2;
-  background-color: rgb(247, 187, 57);
-  box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.2381),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.14286);
-  font-size: 12px;
-}
-
-#dashboard .r128 {
-  color: #f9f6f2;
-  background-color: rgb(255, 156, 63);
-  box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.47619),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.28571);
-  font-size: 17px;
-}
-
-#dashboard .r256 {
-  color: #f9f6f2;
-  background-color: rgb(252, 49, 31);
-  box-shadow: 0 0 30px 20px rgba(243, 215, 116, 0.55556),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
-  font-size: 20px;
-}
-
-#dashboard .r div {
-  height: 100%;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 1vmin;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100%;
-}
-
-#dashboard .rPr {
-  animation-name: scaleDraw;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite;
-  animation-duration: 1.5s;
+  top: 12vh;
+  left: 5vw;
+  background-color: rgba(205, 209, 233, 0.95);
+  border-radius: 3vmin;
+  height: 65vh;
+  width: 90vw;
 }
 
 @keyframes scaleDraw {
@@ -191,18 +98,6 @@ body {
   width: 6em;
   height: 2.5em;
   font-size: 3vh;
-}
-
-#protein-container {
-  height: 3vmin;
-  width: 35vmin;
-  display: flex;
-}
-
-#protein-container img {
-  height: 4vmin;
-  width: 7vmin;
-  margin: 0 1vmin 0 0;
 }
 
 #modal {
@@ -273,4 +168,71 @@ body {
 }
 #modal-img {
   width: 150px;
+}
+
+#clusters {
+  position: absolute;
+  top: 80vh;
+  left: 5vw;
+  width: 90vw;
+  display: flex;
+  justify-content: space-around;
+}
+
+#clusters > img {
+  position: relative;
+  height: 17vh;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 3vmin;
+}
+
+#clusters > div {
+  position: relative;
+  width: 17vw;
+  height: 17vh;
+  background-color: rgb(205, 209, 233);
+  border-radius: 3vmin;
+  display: flex;
+  align-content: center;
+}
+
+#clusters > div > .cluster-image {
+  height: 15vh;
+  width: 11vw;
+  margin: 1vh 1vw;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+#clusters > div > .cluster-pr-container {
+  height: 15vh;
+  width: 3vw;
+  margin: 1vh 1vw;
+  margin-left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+#clusters > div > div > div {
+  height: 4.5vh;
+  width: 3vw;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.pr {
+  position: sticky;
+}
+
+.pr-click {
+  box-shadow: 0 0 30px 20px rgba(243, 215, 116, 0.55556),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+}
+
+.buc-click {
+  box-shadow: 0 0 30px 20px rgba(255, 174, 203, 0.556),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
 }

@@ -2,18 +2,9 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link
-      rel="stylesheet"
-      href="./static/index.css"
-    />
-    <script
-      type="text/javascript"
-      src="./static/index.js"
-    ></script>
-    <script
-      type="text/javascript"
-      src="./static/star-background.js"
-    ></script>
+    <link rel="stylesheet" href="./static/index.css" />
+    <script type="text/javascript" src="./static/index.js"></script>
+    <script type="text/javascript" src="./static/star-background.js"></script>
     <!-- <link rel="icon" href="" /> -->
     <title>首页丨🪐智慧星球🦠</title>
   </head>
@@ -22,16 +13,19 @@
     <div class="home">
       <h1 class="game-title">智慧星球</h1>
       <div class="game-intro">
-        欢迎来到智慧星球！ 探索科学的奇妙世界，成为知识小达人！
-        在智慧星球，你将踏上一次充满乐趣的科学冒险之旅。每个星球都是一个独立的模块，带你了解生物学的神奇知识。
-        选择一个星球开始你的冒险吧！
+        欢迎来到智慧星球！ 探索科学的奇妙世界，成为知识达人！<br />
+        在遥远的流水星球上，几座化工厂的出现严重破坏了那里的生态环境，河流中充满了有害的重金属。
+        为了拯救环境，小细菌希望能找到能够对付重金属的“武器”——<strong>蛋白质</strong>，
+        把它们组装到自己的身体上，让重金属成为自己的“食物”。快来帮助小细菌吧！<br />
+        在智慧星球，你将和小细菌一道，踏上一次充满乐趣的科学冒险之旅。
+        选择一个星球，开始你的冒险吧！（建议从左到右依次游玩哦！）
       </div>
       <span>
         <div class="buttons button-2048" onclick="to2048()">基因星球</div>
         <div class="buttons button-ai" onclick="toAi()">智能星球</div>
-        <div class="buttons button-sewage" onclick="toSewage()">净化星球</div>
+        <div class="buttons button-sewage" onclick="toSewage()">流水星球</div>
       </span>
     </div>
-    <img id="ecoli"></img>
+    <img id="img-ecoli" src="./static/ecoli_^^D.png" />
   </body>
 </html>

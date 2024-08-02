@@ -46,10 +46,10 @@
   margin-right: 3rem;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 80%;
+  background-size: auto 80%;
 }
 .buttons:hover {
-  background-size: 100%;
+  background-size: auto 100%;
 }
 
 /* Courtesy of:
@@ -63,4 +63,11 @@
 }
 .button-sewage {
   background-image: url("./star2.png");
+}
+
+#img-ecoli {
+  position: absolute;
+  top: 6vh;
+  left: 75vw;
+  height: 30vh;
 }

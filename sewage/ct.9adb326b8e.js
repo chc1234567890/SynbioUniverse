@@ -5771,7 +5771,7 @@ ${ev.error?.stack ?? "(no stack available)"}`;
         {
           const other = place.occupied(this, "food");
           if (templates.valid(other)) {
-            if (rooms.current.energyInsufficient != "消化中……") {
+            if (rooms.current.digest != "消化中……") {
               if (rooms.current.energy >= this.dict[other.template]) {
                 other.kill = true;
                 rooms.current.score += this.dict[other.template];
@@ -5790,7 +5790,7 @@ ${ev.error?.stack ?? "(no stack available)"}`;
                   rooms.current.tasty = "";
                 }, 1500);
 
-                if (rooms.current.score >= 1000) {
+                if (rooms.current.score >= 500) {
                   Func = [toHome, () => {}];
                   MessageBox(
                     "胜利",
@@ -5816,22 +5816,30 @@ ${ev.error?.stack ?? "(no stack available)"}`;
           let value = actions["Digest"].value;
 
           if (rooms.current.digest.length < 20) {
-            rooms.current.digest = "";
-            rooms.current.energyInsufficient = "消化中……";
+            rooms.current.digest = "消化中……";
             const sleep = (delay) =>
               new Promise((resolve) => setTimeout(resolve, delay));
             const scaleDown = async () => {
+              var cnt = 0;
+              var img_ecoli = document.getElementById("img-ecoli"),
+                flag = 1;
+              img_ecoli.src = "../static/ecoli_..w1.png";
               while (this.scale.x > 1) {
                 this.scale.x -= 0.01;
                 this.scale.y -= 0.01;
                 await sleep(50);
+                if (++cnt % 4 == 0) {
+                  flag = 3 - flag;
+                  img_ecoli.src = "../static/ecoli_..w" + flag + ".png";
+                }
               }
               rooms.current.energy = 100;
               this.scale.x = this.scale.y = 1;
               rooms.current.energyInsufficient = "消化完成！";
+              img_ecoli.src = "../static/ecoli_..).png";
               setTimeout(() => {
                 rooms.current.energyInsufficient = "";
-              }, 500);
+              }, 1000);
               rooms.current.digest =
                 "我们刚刚消化了一些重金属，要过一会才能继续消化哦~";
               setTimeout(() => {

@@ -41,19 +41,39 @@ function MessageBox(
 }
 
 document.body.onload = () => {
-  Func = [() => {}, () => {}];
+  Func = [
+    () => {
+      document.getElementById("script-1").src = "ct.9adb326b8e.js";
+    },
+    () => {},
+  ];
   MessageBox(
-    "净化重金属污水",
-    "欢迎来到蛋白质合成实验室！<br>\
-在这里，你将逐步地了解基因表达的过程——转录和翻译。通过合并相同的方块，你将从DNA的基本单位——脱氧核苷酸开始，\
-经过DNA、RNA，最终合成基因表达的产物——蛋白质。\
-要通过这一关，你需要<strong>合成 5 个蛋白质</strong>哦！<br>\
-单击方块可以查看方块类型的介绍。\
-<br>按键盘上的“↑”“↓”“←”“→”或 AWSD 键，可以朝不同方向合并方块。\
-还等什么？快开始合成吧！",
+    "流水星球",
+    "欢迎来到流水星球！<br>\
+本来，这里山清水秀，但是几座化工厂的到来破坏了河流的生态环境！工厂排放的污水含有大量重金属离子，\
+对河流里的鱼儿有致命的伤害，也非常不利于人类的健康！\
+在“智能星球”上，我们已经成功使用<strong>人工智能</strong>制造了可以战胜重金属离子的“武器”——\
+蛋白质。现在，小细菌已经整装待发，等着你喂给它吃重金属离子啦！<br><br>\
+<br>按键盘上的“↑”“↓”“←”“→”或 AWSD 键，可以朝不同方向移动小细菌，让它吃掉重金属离子。<br>\
+吃掉不同的重金属离子会得到不同的<strong>得分</strong>，同时细菌损失一定的<strong>能量</strong>。<br>\
+当剩余的能量不足以吃掉对应的重金属离子时，你需要<strong>按下空格键消化重金属</strong>。\
+消化完成后，需要间隔15秒才能再一次消化。<br>\
+要通过这一关，你需要<strong>得到至少 500 分</strong>。<br>\
+还等什么？快开始吧！",
     "⌨️开始！",
     undefined,
     "ecoli_..D",
     "500px"
   );
+};
+
+const ENTER = "Enter";
+window.onkeydown = function (evt) {
+  var key = evt.key;
+  if (!document.getElementById("modal").hasAttribute("class")) {
+    if (key == ENTER) {
+      fnClose(0);
+    }
+    return;
+  }
 };

@@ -67,3 +67,49 @@
 #modal-img {
   width: 150px;
 }
+
+#img-ecoli {
+  position: absolute;
+  top: 15vh;
+  left: 27vw;
+  height: 25vh;
+}
+
+.navigator {
+  position: absolute;
+  top: 0;
+  left: 25vw;
+  right: 25vw;
+  height: 8vh;
+  width: 50vw;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-around;
+  font-size: 3vh;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.navigator .nav-title {
+  font-weight: 700;
+  font-size: 4vh;
+  margin: 0;
+  width: 14vw;
+  align-content: center;
+  text-align: center;
+}
+
+.navigator > * {
+  margin-right: 1vw;
+}
+
+.navigator > button {
+  background-color: #ceebb3;
+  cursor: pointer;
+  border: none;
+  width: 6em;
+  height: 2em;
+  font-size: 3vh;
+}

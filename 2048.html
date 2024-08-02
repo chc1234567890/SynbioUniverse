@@ -2,14 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link
-      rel="stylesheet"
-      href="./static/2048.css"
-    />
-    <script
-      type="text/javascript"
-      src="./static/2048.js"
-    ></script>
+    <link rel="stylesheet" href="./static/2048.css" />
+    <script type="text/javascript" src="./static/2048.js"></script>
     <!-- <link rel="icon" href="" /> -->
     <title>🧬基因星球丨🪐智慧星球🦠</title>
   </head>
@@ -17,9 +11,8 @@
   <body onload="init()">
     <div class="bg-img"></div>
     <div class="navigator">
-      <p class="nav-title">蛋白质合成实验室</p>
-      <button onclick='toHome()'>返回主页</button>
-      <button onclick='toEdit()'>上一关</button>
+      <p class="nav-title">基因星球</p>
+      <button onclick="toHome()">返回主页</button>
       <span>
         <p>时间：</p>
         <p id="nav-time">00 : 00</p>
@@ -31,11 +24,11 @@
       <span>
         <p>蛋白质：</p>
         <span id="protein-container">
-          <img id="protein-1"></img>
-          <img id="protein-2"></img>
-          <img id="protein-3"></img>
-          <img id="protein-4"></img>
-          <img id="protein-5"></img>
+          <img id="protein-1" />
+          <img id="protein-2" />
+          <img id="protein-3" />
+          <img id="protein-4" />
+          <img id="protein-5" />
         </span>
       </span>
       <button onclick="init()">重新开始</button>
@@ -81,11 +74,10 @@
     </div>
     <div id="modal-cover"></div>
     <div id="modal">
-      <div class="title">
-      </div>
+      <div class="title"></div>
       <div class="content">
         <p></p>
-        <img id="modal-img"></img>
+        <img id="modal-img" />
       </div>
       <!-- <div class="confirm" onclick="fnClose()">
         <span class="close-but">我知道了</span>
