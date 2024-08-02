@@ -5790,7 +5790,7 @@ ${ev.error?.stack ?? "(no stack available)"}`;
                   rooms.current.tasty = "";
                 }, 1500);
 
-                if (rooms.current.score >= 500) {
+                if (rooms.current.score >= MAX_SCORE) {
                   Func = [toHome, () => {}];
                   MessageBox(
                     "胜利",

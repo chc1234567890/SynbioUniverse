@@ -53,7 +53,7 @@ const KEYS = [LEFT, RIGHT, UP, DOWN];
 
 const RNUM = 4;
 const CNUM = 4;
-const nProtein = 5;
+const nProtein = 1;
 const mp = {
   0: "",
   2: "脱氧核苷酸",
@@ -256,11 +256,11 @@ function Pr(num) {
   setTimeout(() => {
     rect[num].className = rect[num].className.slice(0, -4);
     setRect(num, 0);
-    if (cntProtein == 5) {
+    if (cntProtein == nProtein) {
       Func = [toHome, init];
       MessageBox(
         "通关！",
-        "恭喜你，成功合成了 5 个蛋白质！你花费的时间是：" +
+        "恭喜你，成功合成了蛋白质！你花费的时间是：" +
           document.getElementById("nav-time").innerHTML +
           "，得分是：" +
           document.getElementById("nav-score").innerHTML +
@@ -386,7 +386,7 @@ function init() {
 在这里，小细菌会带你初步了解一些基因的基本知识。\
 通过合并相同的方块，你将从DNA的基本单位——脱氧核苷酸开始，\
 经过DNA、RNA，最终合成基因表达的产物——蛋白质。<br><br>\
-要通过这一关，你需要<strong>合成 5 个蛋白质</strong>哦！<br>\
+要通过这一关，你需要合成<strong>一个蛋白质</strong>哦！<br>\
 单击方块可以查看方块类型的介绍。\
 <br>按键盘上的“↑”“↓”“←”“→”方向键，可以朝不同方向合并方块。\
 还等什么？快开始合成吧！",
